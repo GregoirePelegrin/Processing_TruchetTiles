@@ -1,21 +1,21 @@
-Cell cell;
+Grid grid;
 
 void setup(){
-    size(600, 600);
-    frameRate(30);
+    // size(600, 600);
+    fullScreen();
+    frameRate(3);
 
-    cell = new Cell(new Point(width/2, height/2), 25, 0);
+    grid = new Grid(100, 50);
 }
 
 void draw(){
     background(0);
-    cell.display();
+    grid.display();
+    // grid.update();
 }
 
 void mousePressed() {
     if(mouseButton == LEFT){
-        cell.type++;
-        if(cell.type >= 4) cell.type = 0;
-        println(cell.type);
+        grid.update();
     }
 }

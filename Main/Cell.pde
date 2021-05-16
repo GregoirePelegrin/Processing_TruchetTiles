@@ -5,15 +5,20 @@ class Cell{
     Point c4;
     int type;
 
-    Cell(Point c, float s, int _t){
-        this.c1 = new Point(c.x - s, c.y - s);
-        this.c2 = new Point(c.x + s, c.y - s);
-        this.c3 = new Point(c.x + s, c.y + s);
-        this.c4 = new Point(c.x - s, c.y + s);
+    Cell(Point c, float w, float h, int _t){
+        // this.c1 = new Point(c.x - w/2, c.y - h/2);
+        // this.c2 = new Point(c.x + w/2, c.y - h/2);
+        // this.c3 = new Point(c.x + w/2, c.y + h/2);
+        // this.c4 = new Point(c.x - w/2, c.y + h/2);
+        this.c1 = new Point(c.x - w, c.y - h);
+        this.c2 = new Point(c.x + w, c.y - h);
+        this.c3 = new Point(c.x + w, c.y + h);
+        this.c4 = new Point(c.x - w, c.y + h);
         this.type = _t;
     }
 
     void display(){
+        // stroke(255);
         fill(255);
         if(this.type == 0){
             beginShape();
